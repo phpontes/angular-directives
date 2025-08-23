@@ -1,27 +1,59 @@
-# DirectivesDeepDive
+# Angular Directives - Projeto de Estudo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+Este projeto foi desenvolvido como parte do estudo de **Directives** em Angular.  
+O objetivo é explorar como criar e aplicar **directives personalizadas**, além de praticar o uso de *standalone components*.
 
-## Development server
+## 🚀 Tecnologias
+- Angular
+- TypeScript
+- HTML & CSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📌 Diretivas Implementadas
 
-## Code scaffolding
+### 1. `appLog`
+- **Tipo**: Attribute Directive
+- **Uso**: `<button appLog>Click me</button>`
+- **Função**:  
+  - Registra no console quando o elemento é clicado.  
+  - Exibe no console o próprio elemento DOM.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+### 2. `appSafeLink`
+- **Tipo**: Attribute Directive (aplicada a links)
+- **Uso**: `<a href="https://angular.io" appSafeLink="docs">Angular Docs</a>`
+- **Função**:  
+  - Pergunta ao usuário se deseja realmente sair da aplicação.  
+  - Caso afirmativo, adiciona um query param `?from=docs` ao link.  
+  - Incorpora a `LogDirective` como *host directive*.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+### 3. `appAuth`
+- **Tipo**: Structural Directive
+- **Uso**:  
+  ```html
+  <div *appAuth="'admin'">
+    Conteúdo visível apenas para administradores
+  </div>
+  ```
+- **Função**:  
+  - Exibe ou esconde elementos com base na permissão do usuário.
+  - Faz integração com AuthService para verificar permissões.
+ 
+## ▶️ Executando o Projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+# Instalar dependências
+npm install
 
-## Running end-to-end tests
+# Rodar servidor de desenvolvimento
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Acessar no navegador
+http://localhost:4200/
+```
 
-## Further help
+## 🎯 Objetivo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O propósito deste projeto não é ser uma aplicação completa, mas sim um **laboratório de aprendizado**, focado na criação e uso de **directives em Angular**.
